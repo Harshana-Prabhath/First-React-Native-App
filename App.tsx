@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-import TextComponent from './Components/TextComponent/TextComponent';
-import {
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  Dimensions,
-  View,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
+
+import { SafeAreaView, Text, StyleSheet, Dimensions, View, TouchableOpacity } from 'react-native';
 
 const { height, width } = Dimensions.get('window');
 
