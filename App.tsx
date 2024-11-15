@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import { SafeAreaView, Text, StyleSheet, Dimensions, View, TouchableOpacity } from 'react-native';
+import { ThemeProvider } from './Providers/ThemeProvider';
+import Splash from './Components/TextComponent/Splash/Splash';
 
 const { height, width } = Dimensions.get('window');
 
@@ -8,19 +10,9 @@ function App(): React.JSX.Element {
   const [value, setValue] = useState(0);
 
   return (
-    <SafeAreaView style={style.containerStyle}>
-      <View style={style.contentContainer}>
-        <Text style={style.valueStyle}>{value}</Text>
-        <View style={style.buttonView}>
-          <TouchableOpacity style={style.buttonSub} onPress={() => setValue(value - 1)}>
-            <Text style={style.textSubAdd}>Substract</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={style.buttonAdd} onPress={() => setValue(value + 1)}>
-            <Text style={style.textSubAdd}>Add</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </SafeAreaView>
+    <ThemeProvider>
+      <Splash />
+    </ThemeProvider>
   );
 }
 
