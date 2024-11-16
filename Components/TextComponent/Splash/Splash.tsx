@@ -1,12 +1,27 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { SafeAreaView, Text, TouchableOpacity } from 'react-native';
 
 import { useThemeProvider } from '../../../Providers/ThemeProvider';
+import useToggle from '../../../CusomHooks/ToggleHook';
+import useFetchData from '../../../CusomHooks/FetchData';
 
 const Splash = () => {
   const { theme } = useThemeProvider();
 
-  return <Text>{theme}</Text>;
+  const { data, isLoading } = useFetchData('https://jsonplaceholder.typicode.com/users');
+
+  console.log(data);
+
+  const [valueState, toggle] = useToggle(false);
+
+  return (
+    <SafeAreaView>
+      <Text>{valueState ? 'ON' : 'Off'}</Text>
+      <TouchableOpacity onPress={toggle}>
+        <Text>Toggle</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
 };
 
 export default Splash;
