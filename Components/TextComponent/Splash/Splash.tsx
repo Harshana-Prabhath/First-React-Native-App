@@ -18,7 +18,7 @@ const Splash = () => {
       <TouchableOpacity onPress={toggle}>
         <Text>Toggle</Text>
       </TouchableOpacity>
-      <Car color="blue" />
+      <Car color={valueState ? 'blue' : 'red'} />
     </SafeAreaView>
   );
 };
