@@ -19,7 +19,6 @@ class Car extends Component<Props, state> {
       this.setState({ color: 'magenta' });
     }, 1000);
   }
-  getSnapshotBeforeUpdate(prevProps: Readonly<Props>, prevState: Readonly<state>) {}
 
   changeColor = () => {
     this.setState({ color: 'orange' });
