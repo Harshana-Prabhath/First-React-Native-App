@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, Switch } from 'react-native';
 import FormComponentStyles from './FormComponentStyles';
 
 const FormComponent = () => {
@@ -7,6 +7,7 @@ const FormComponent = () => {
   const [password, setPassword] = useState<string>('');
   const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
   const [isPasswordValid, setIsPasswordValid] = useState<boolean>(false);
+  const [keepMeLoggedIn, setKeepMeLoggedIn] = useState<boolean>(true);
 
   const EmailValid = (emailVal: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,9 +50,16 @@ const FormComponent = () => {
           PasswordValid(password) ? setIsPasswordValid(true) : setIsPasswordValid(false);
         }}
       />
+      <View style={FormComponentStyles.switchWrapper}>
+        <Switch
+          value={keepMeLoggedIn}
+          onValueChange={() => setKeepMeLoggedIn(prevState => !prevState)}
+        />
+        <Text>Keep me Logged in </Text>
+      </View>
       <TouchableOpacity
         onPress={() => {
-          console.log(email, password);
+          console.log(email, password, keepMeLoggedIn);
           setEmail('');
           setPassword('');
         }}

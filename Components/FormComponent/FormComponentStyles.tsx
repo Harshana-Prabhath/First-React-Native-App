@@ -25,5 +25,11 @@ const FormComponentStyles = StyleSheet.create({
   },
   inputBoxInvalid: { borderColor: 'red' },
   inputBoxValid: { borderColor: 'green' },
+  switchWrapper: {
+    width: '100%',
+
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });
 export default FormComponentStyles;
