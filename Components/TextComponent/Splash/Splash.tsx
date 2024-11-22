@@ -1,10 +1,10 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import UserScroll from '../../ScrollComponent/ScrollComponent';
+import FormComponent from '../../FormComponent/FormComponent';
 const Splash = () => {
   return (
     <SafeAreaView>
-      <UserScroll />
+      <FormComponent />
     </SafeAreaView>
   );
 };
