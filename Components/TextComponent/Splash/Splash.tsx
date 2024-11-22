@@ -1,11 +1,10 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import UserInput from '../../TextInputComponent/TextInputComponent';
-
+import UserScroll from '../../ScrollComponent/ScrollComponent';
 const Splash = () => {
   return (
     <SafeAreaView>
-      <UserInput />
+      <UserScroll />
     </SafeAreaView>
   );
 };
